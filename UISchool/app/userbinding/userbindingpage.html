@@ -1,0 +1,26 @@
+<div class="form-group">
+    <input list="bustudentlist" autocomplete="off" type="text" class="form-control" name="bustudentid" placeholder="STUDENT NAME" [(ngModel)]="instanceuserbindingmodel.bustudentid" (change)="studentselect($event)" required >
+    <datalist id="bustudentlist">
+        <option *ngFor="let city of citylistdetails">{{city.expansion}}</option>
+    </datalist>
+</div>
+
+<div class="form-group">
+    <input list="buparentlist" autocomplete="off" type="text" class="form-control" name="buparentid" placeholder="PARENT NAME" [(ngModel)]="instanceuserbindingmodel.buparentid" (change)="parentselect($event)" required >
+    <datalist id="buparentlist">
+        <option *ngFor="let state of statelistdetails">{{state.expansion}}</option>
+    </datalist>
+</div>
+
+<div class="form-group">
+    <input list="buclasssectionlist" autocomplete="off" type="text" class="form-control" name="buclasssectionid" placeholder="CLASS NAME" [(ngModel)]="instanceuserbindingmodel.buclasssectionid" (change)="classsectionselect($event)" required >
+    <datalist id="buclasssectionlist">
+        <option *ngFor="let country of countrylistdetails">{{country.expansion}}</option>
+    </datalist>
+</div>
+
+<div class="form-group">         
+    <input type="radio" name="bustatus" [(ngModel)]="instanceuserbindingmodel.bustatus" value="ACTIVE"/>ACTIVE    
+    <input type="radio" name="bustatus" [(ngModel)]="instanceuserbindingmodel.bustatus" value="IN-ACTIVE"/>IN-ACTIVE    
+</div>
+

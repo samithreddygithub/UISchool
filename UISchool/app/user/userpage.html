@@ -1,0 +1,66 @@
+<div class="form-group">     
+    <select class="dbselection form-control" [(ngModel)]="instanceusermodel.usrroletype" name="usrroletype" [ngModelOptions]="{standalone: true}" required>
+            <option value="EMP">PLEASE SELECT ROLE TYPE</option>
+            <option value="STF">STAFF</option>
+            <option value="STD">STUDENT</option>    
+            <option value="PRT">PARENT</option>                
+    </select>
+</div>
+    
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="170" name="usrfathername" placeholder="FATHER NAME" [(ngModel)]="instanceusermodel.usrfathername" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="53" name="usrfmobilenumber" placeholder="FATHER MOBILE NUMBER" [(ngModel)]="instanceusermodel.usrfmobilenumber" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT'">
+    <input autocomplete="off" type="email" class="form-control" maxlength="80" name="usrfemailid" placeholder="FATHER EMAILID" [(ngModel)]="instanceusermodel.usrfemailid" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="170" name="usrmothername" placeholder="MOTHER NAME" [(ngModel)]="instanceusermodel.usrmothername" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="53" name="usrmmobilenumber" placeholder="MOTHER MOBILE NUMBER" [(ngModel)]="instanceusermodel.usrmmobilenumber" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT'">
+    <input autocomplete="off" type="email" class="form-control" maxlength="80" name="usrmemailid" placeholder="MOTHER EMAILID" [(ngModel)]="instanceusermodel.usrmemailid" required >
+</div>
+        
+<div class="form-group" *ngIf="instanceusermodel.usrroletype != 'PRT' || instanceusermodel.usrroletype == 'STD' || instanceusermodel.usrroletype == 'STF'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="170" name="usrfullname" placeholder="FULL NAME" [(ngModel)]="instanceusermodel.usrfullname" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype != 'PRT' && instanceusermodel.usrroletype != 'STF'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="53" name="usrregisternumber" placeholder="REGISTER NUMBER" [(ngModel)]="instanceusermodel.usrregisternumber" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype != 'PRT' || instanceusermodel.usrroletype == 'STD' || instanceusermodel.usrroletype == 'STF'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="53" name="usrmobilenumber" placeholder="MOBILE NUMBER" [(ngModel)]="instanceusermodel.usrmobilenumber" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype != 'PRT' || instanceusermodel.usrroletype == 'STD' || instanceusermodel.usrroletype == 'STF'">
+    <input autocomplete="off" type="email" class="form-control" maxlength="80" name="usremailid" placeholder="EMAILID" [(ngModel)]="instanceusermodel.usremailid" required >
+</div>       
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT' || instanceusermodel.usrroletype == 'STD' || instanceusermodel.usrroletype == 'STF'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="80" name="usrname" placeholder="USER NAME" [(ngModel)]="instanceusermodel.usrname" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT' || instanceusermodel.usrroletype == 'STD' || instanceusermodel.usrroletype == 'STF'">
+    <input autocomplete="off" type="password" class="form-control" maxlength="80" name="usrpassword" placeholder="USER PASSWORD" [(ngModel)]="instanceusermodel.usrpassword" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT' || instanceusermodel.usrroletype == 'STD' || instanceusermodel.usrroletype == 'STF'">
+    <input autocomplete="off" type="text" class="form-control" maxlength="300" name="usraddress" placeholder="ADDRESS" [(ngModel)]="instanceusermodel.usraddress" required >
+</div>
+
+<div class="form-group" *ngIf="instanceusermodel.usrroletype == 'PRT' || instanceusermodel.usrroletype == 'STD' || instanceusermodel.usrroletype == 'STF'">       
+    <input type="radio" name="usrstatus" [(ngModel)]="instanceusermodel.usrstatus" value="ACTIVE"/>ACTIVE    
+    <input type="radio" name="usrstatus" [(ngModel)]="instanceusermodel.usrstatus" value="IN-ACTIVE"/>IN-ACTIVE    
+</div>
+

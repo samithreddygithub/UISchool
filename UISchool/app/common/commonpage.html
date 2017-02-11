@@ -1,0 +1,37 @@
+<div class="form-group">     
+    <select class="dbselection form-control" [(ngModel)]="cmndropdownlist" name="cmndropdownlist" [ngModelOptions]="{standalone: true}" required>
+            <option value="">PLEASE SELECT TYPE</option>
+            <option value="CLSSEC">CLASS - SECTION</option> 
+            <option value="CLSSUBSTF">CLASS - SUBJECT - STAFF</option>            
+    </select>
+</div>
+
+<div class="form-group" *ngIf="cmndropdownlist == 'CLSSEC'">
+    <input autocomplete="off" type="text" class="form-control" name="csclassname" maxlength="80" placeholder="CLASS NAME" [(ngModel)]="instanceclasssectionmodel.csclassname" required >
+</div>
+
+<div class="form-group" *ngIf="cmndropdownlist == 'CLSSEC'">
+    <input autocomplete="off" type="text" class="form-control" name="cssectionname" maxlength="80" placeholder="SECTION NAME" [(ngModel)]="instanceclasssectionmodel.cssectionname" required >
+</div>
+
+<div class="form-group" *ngIf="cmndropdownlist == 'CLSSEC'">         
+    <input type="radio" name="usrstatus" [(ngModel)]="instanceclasssectionmodel.csstatus" value="ACTIVE"/>ACTIVE    
+    <input type="radio" name="usrstatus" [(ngModel)]="instanceclasssectionmodel.csstatus" value="IN-ACTIVE"/>IN-ACTIVE    
+</div>
+
+<div class="form-group" *ngIf="cmndropdownlist == 'CLSSUBSTF'">
+    <input autocomplete="off" type="text" class="form-control" name="csubclasssectionid" placeholder="CLASS NAME" [(ngModel)]="instanceclasssubjectmodel.csubclasssectionid" required >
+</div>
+
+<div class="form-group" *ngIf="cmndropdownlist == 'CLSSUBSTF'">
+    <input autocomplete="off" type="text" class="form-control" name="csubsubjectname" maxlength="80" placeholder="SUBJECT NAME" [(ngModel)]="instanceclasssubjectmodel.csubsubjectname" required >
+</div>
+
+<div class="form-group" *ngIf="cmndropdownlist == 'CLSSUBSTF'">
+    <input autocomplete="off" type="text" class="form-control" name="csstaffnameid" placeholder="STAFF NAME" [(ngModel)]="instanceclasssubjectmodel.csstaffnameid" required >
+</div>
+
+<div class="form-group" *ngIf="cmndropdownlist == 'CLSSUB'">         
+    <input type="radio" name="usrstatus" [(ngModel)]="instanceclasssubjectmodel.csubstatus" value="ACTIVE"/>ACTIVE    
+    <input type="radio" name="usrstatus" [(ngModel)]="instanceclasssubjectmodel.csubstatus" value="IN-ACTIVE"/>IN-ACTIVE    
+</div>
